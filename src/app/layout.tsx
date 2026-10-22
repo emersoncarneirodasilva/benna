@@ -21,7 +21,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 // Substituir pela URL final do domínio da Benna
-const siteUrl = "https://benna.com.br";
+const siteUrl = "https://benna.pages.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
