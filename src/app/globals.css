@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+/* 1. Definição das cores para a Benna (Sorveteria Artesanal) */
+:root {
+  --background: #f6f0e6;
+  --background-alt: #f2ece1;
+  --background-alt2: #fffdf8;
+  --background-header: #f6f0e6cc;
+  --background-footer: #45342d;
+  --background-card: #f6f0e6;
+
+  /* Tipografia */
+  --text-title: #45342d;
+  --text-title-detail: #d89a98;
+  --text-main: #45342dcc;
+  --text-muted: #45342d99;
+
+  /* Identidade Principal (Amadeirado / Gourmet) */
+  --primary: #45342d;
+  --primary-hover: #5d4840; /* Hover suave para o tom marrom principal */
+
+  /* Cores de Acento (Ingredientes) */
+  --mint: #7ba68d; /* Folha de hortelã */
+  --pistachio: #a8b69a; /* Pistache */
+  --berry: #d89a98; /* Frutas vermelhas / Calda */
+  --baunilha: #f6f0e6; /* Baunilha / Creme */
+
+  /* Bordas */
+  --border: #e4dcd3;
+}
+
+/* 2. Mapeamento para o Tailwind usando @theme inline */
+@theme inline {
+  --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
+  --color-background-alt2: var(--background-alt2);
+  --color-background-header: var(--background-header);
+  --color-background-footer: var(--background-footer);
+  --color-background-card: var(--background-card);
+
+  --color-text-title: var(--text-title);
+  --color-text-title-detail: var(--text-title-detail);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+
+  --color-mint: var(--mint);
+  --color-pistachio: var(--pistachio);
+  --color-berry: var(--berry);
+  --color-baunilha: var(--baunilha);
+
+  --color-border: var(--border);
+
+  /* Fontes mapeadas conforme a escolha */
+  --font-display: var(--font-playfair);
+  --font-jakarta: var(--font-jakarta);
+
+  --max-site-width: 1440px;
+  --side-padding: 1.5rem;
+}
+
+/* 3. Camada base e aplicação das tipografias */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 65px;
+  }
+
+  body {
+    @apply bg-background text-text-main antialiased;
+    font-family: var(--font-jakarta), sans-serif;
+  }
+
+  .wrapper {
+    @apply w-full max-w-(--max-site-width) mx-auto px-(--side-padding);
+  }
+
+  /* Títulos H1 a H6 com Playfair Display (Estética Editorial/Artesanal) */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display), serif;
+    @apply text-text-title font-bold tracking-tight;
+  }
+
+  /* Utilitário rápido para as pequenas chamadas / tags */
+  .font-tag {
+    font-family: var(--font-jakarta), sans-serif;
+    @apply text-xs uppercase tracking-widest font-semibold;
+  }
+
+  /* 4. Scrollbar Personalizada */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--background-detail);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--background-detail);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 9999px;
+    border: 2px solid var(--background-detail);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-muted);
+  }
+}
+
+/* 5. Animações */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes wave-move {
+  0% {
+    transform: translateX(0) translateZ(0);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0);
+  }
+}
+
+.animate-wave-slow {
+  animation: wave-move 18s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.animate-wave-fast {
+  animation: wave-move 12s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite reverse;
+}
