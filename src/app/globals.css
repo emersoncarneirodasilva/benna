@@ -5,6 +5,7 @@
   --background: #f6f0e6;
   --background-alt: #f2ece1;
   --background-alt2: #fffdf8;
+  --background-detail: var(--background-alt);
   --background-header: #f6f0e6cc;
   --background-footer: #45342d;
   --background-card: #f6f0e6;
@@ -55,7 +56,7 @@
 
   /* Fontes mapeadas conforme a escolha */
   --font-display: var(--font-playfair);
-  --font-jakarta: var(--font-jakarta);
+  --font-jakarta: var(--font-plus-jakarta);
 
   --max-site-width: 1440px;
   --side-padding: 1.5rem;

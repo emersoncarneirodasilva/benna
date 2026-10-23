@@ -79,7 +79,7 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setActiveSegment(link.href)}
-                  className={`font-medium transition-colors relative py-1 ${
+                  className={`font-medium transition-colors relative py-1 text-sm xl:text-base ${
                     isActive
                       ? "text-text-title font-semibold"
                       : "text-text-main hover:text-primary"
@@ -99,7 +99,7 @@ export default function Header() {
             {/* Botão de CTA Principal (lg+) */}
             <Link
               href="/#contato"
-              className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-baunilha text-sm tracking-wider uppercase font-semibold hover:bg-primary-hover transition-colors shadow-sm"
+              className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-baunilha text-xs xl:text-sm tracking-wider uppercase font-semibold hover:bg-primary-hover transition-colors shadow-sm"
             >
               <MapPin className="w-3.5 h-3.5 text-berry" />
               <span>Venha nos visitar</span>

@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative pt-8 pb-20 lg:pt-16 lg:pb-32 overflow-hidden"
+      className="relative pt-16 pb-20 lg:pb-32 overflow-hidden"
     >
       {/* 1. Círculo Superior Esquerdo (Pistache/Mint suave) */}
       <div className="absolute top-20 left-0 -translate-x-1/3 w-100 h-100 bg-mint/15 rounded-full blur-[100px] pointer-events-none -z-10" />
